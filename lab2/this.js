@@ -32,7 +32,6 @@ person.imie = "pszemek"
 console.log(person.sayHello());
 
 // 4. Apply - this powiaze obiekty, ktore przekazemy
-
 function dajGlos(zwierze) {
   return "jestę "  + zwierze + " i robie " + this.message
 }

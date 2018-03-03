@@ -53,5 +53,4 @@ console.log(lib.musicStore.showStaff());
 console.log(lib.musicStore.showAvaiableInstruments());
 lib.musicStore.addInstrument("guitar");
 lib.musicStore.addInstrument("chopstick");
-
 console.log(lib.musicStore.showAvaiableInstruments());
