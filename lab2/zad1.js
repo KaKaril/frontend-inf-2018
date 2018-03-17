@@ -2,8 +2,9 @@
 // Dzidzina Music Shop
 
 var lib = {};
+ "use strict"; // Funkcjonalność przeglądarki (HACK!), funkcje ktore uzywaja niezadeklarowanych zmienmych powodowaly blad wyklonania programu. Proba ich wyłapania.
 
-lib.musicStore = (function(){
+lib.musicStore = ((function(){
   var instruments = [
     {
       type: "guitar",
@@ -19,18 +20,18 @@ lib.musicStore = (function(){
       type: "chopstick",
       amount: 0
     }
-  ]
+  ];
 
   var staff = [{
     name : "Piotr",
     surname: "Piotrkowski",
-    id: 001
+    id: "001"
   },
   {
     name : "Pszemek",
     surname : "Kwaśny",
-    id: 002
-  }]
+    id: "002"
+  }];
 
   return {
     showStaff: function() {
@@ -40,14 +41,14 @@ lib.musicStore = (function(){
       return instruments;
     },
     addInstrument: function(instrument){
-      instruments.filter(function(item){
+      instruments.map(function(item){
         if(item.type === instrument){
           item.amount +=1;
         }
       });
     }
   };
-})();
+})());
 
 console.log(lib.musicStore.showStaff());
 console.log(lib.musicStore.showAvaiableInstruments());
