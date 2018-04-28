@@ -14,6 +14,7 @@ class Student {
     constructor(public name :string, public yob: number){
       this.name = name;
       this.yob = yob;
+      pesel? :number;
     }
 }
 

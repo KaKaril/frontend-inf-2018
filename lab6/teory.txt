@@ -1,1 +1,1 @@
-TypeScript
+TypeScript -kontrola typów, wczesnie, w czasie kopmilacji
