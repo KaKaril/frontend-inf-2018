@@ -1,0 +1,6 @@
+- Interakcja miedzy komponentami -> komponent z modelem zawsze w synchronizacji (data binding)
+parent do childa -> przez property
+child do parenta -> przez event
+
+
+- Formularze
