@@ -7,3 +7,16 @@
 </app-person-details>
 
 <app-person-search></app-person-search>
+//////////////////////////////////////////////////////////////
+
+
+<form [formGroup]="myForm" (ngSubmit)="mySubmit(myForm.value)">
+  <input type="text" [formControl]="imie">
+  <input type="text" [formControl]="yob">
+
+<button type="submit">ERROR</button>
+</form>
+
+
+<div *ngIf="imie.hasError('required')">Imie wymagane</div>
+<div *ngIf="imie.hasError('franekValue')">Franek odpada</div>

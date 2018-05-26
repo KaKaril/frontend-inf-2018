@@ -3,4 +3,5 @@ parent do childa -> przez property
 child do parenta -> przez event
 
 
-- Formularze
+- Formularze (CRUD)
+- service formsy i validatory dla swojego
