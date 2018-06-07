@@ -1,0 +1,18 @@
+<div *ngIf="instrument">
+
+  <h2>{{ instrument.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{instrument.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="instrument.name" placeholder="name">
+    </label>
+  </div>
+  <div>
+    <label>amount:
+      <input [(ngModel)]="instrument.amount" placeholder="amount">
+    </label>
+  </div>
+  <div><span>Year of production: </span>{{instrument.yearOfProduction}}</div>
+  <div><span>Manufacturer: </span>{{instrument.manufacturer.companyName}} founded in {{instrument.manufacturer.yearOfEstate}} </div>
+
+</div>
