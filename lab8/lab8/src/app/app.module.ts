@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {PersonService} from './services/person.service';
 
-import { AppComponent } from './app.component';
-import { PersonsComponent } from './persons/persons.component';
-import { PersonDetailsComponent } from './person-details/person-details.component';
-import { PersonSearchComponent } from './person-search/person-search.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {AppComponent} from './app.component';
+import {PersonsComponent} from './persons/persons.component';
+import {PersonDetailsComponent} from './person-details/person-details.component';
+import {PersonSearchComponent} from './person-search/person-search.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [PersonService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
