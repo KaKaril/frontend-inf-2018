@@ -1,0 +1,10 @@
+<h3>Bestsellers</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let instrument of instruments" class="col-1-4"
+     routerLink="/detail/{{instrument.id}}">
+    <div class="module instrument">
+      <h4>{{instrument.name}}</h4>
+    </div>
+  </a>
+</div>
+<app-instrument-search></app-instrument-search>

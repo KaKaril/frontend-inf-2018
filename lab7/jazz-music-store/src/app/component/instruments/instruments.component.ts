@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {INSTRUMENTS} from "../../mocks-instruments";
 import {Instrument} from "../../model/Instrument";
+import {InstrumentService} from "../../service/instrument/instrument.service";
 
 @Component({
   selector: 'app-instruments',
@@ -9,16 +9,15 @@ import {Instrument} from "../../model/Instrument";
 })
 export class InstrumentsComponent implements OnInit {
 
-  instruments = INSTRUMENTS;
+  instruments: Instrument[];
 
-  selectedInttrument : Instrument;
-
-  onSelect(instrument: Instrument): void {
-    this.selectedInttrument = instrument;
-  }
-  constructor() { }
+  constructor(private instrumentService: InstrumentService) { }
 
   ngOnInit() {
+    this.getInstruments();
   }
 
+  getInstruments (){
+    this.instrumentService.getInstruments().subscribe(instruments => this.instruments = instruments)
+  }
 }

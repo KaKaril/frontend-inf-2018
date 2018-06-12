@@ -1,8 +1,9 @@
-<app-instrument-detail [instrument]="selectedInttrument"></app-instrument-detail>
 <ul class="instruments">
 <li *ngFor="let instrument of instruments"
     [class.selected]="instrument === selectedInttrument"
     (click)="onSelect(instrument)">
-  <span class="badge">{{instrument.amount}}</span> {{instrument.name}}'s
+  <a routerLink="/detail/{{instrument.id}}">
+
+    <span class="badge">{{instrument.amount}}</span> {{instrument.name}}'s</a>
 </li>
 </ul>
