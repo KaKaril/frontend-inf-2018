@@ -1,0 +1,15 @@
+{
+  "name": "lab10",
+  "version": "1.0.0",
+  "description": "Webpack\r -> transpiler/kompilator => es5\r -> optymalizacja\r -> bundle (lazy loading)\r -> uglyfication GWT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}

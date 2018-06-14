@@ -17,6 +17,6 @@ export class DashboardComponent implements OnInit {
 
   getInstruments(): void {
     this.instrumentService.getInstruments()
-      .subscribe(instruments => this.instruments = instruments.slice(0, 5));
+      .subscribe(instruments => this.instruments = instruments.slice(0, 4));
   }
 }

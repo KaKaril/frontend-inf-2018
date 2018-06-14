@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Person } from './../model/person';
-import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {Person} from './../model/person';
+import {FormGroup, FormBuilder, FormControl, Validators, AbstractControl} from '@angular/forms';
 import {PersonService} from './../services/person.service';
 
 
@@ -19,8 +19,8 @@ export class PersonsComponent implements OnInit {
 
   constructor(fb: FormBuilder, private personService: PersonService) {
     this.myForm = fb.group({
-      'imie' : ['podaj imie', Validators.compose([Validators.required, this.myImieValidator])],
-      'yob' :['podaj rok urodzenia']
+      'imie': ['podaj imie', Validators.compose([Validators.required, this.myImieValidator])],
+      'yob': ['podaj rok urodzenia']
     });
 
     this.imie = this.myForm.controls['imie'];
@@ -30,32 +30,33 @@ export class PersonsComponent implements OnInit {
     this.persons = [new Person('Bolek', 1999), new Person('Lolek', 1998)];
   }
 
-  selectPerson(person: Person){
+  selectPerson(person: Person) {
     this.selectedPerson = person;
   }
 
-  detailsChanged(person: Person){
+  detailsChanged(person: Person) {
     console.log(`Children changed : ${person.name}`);
   }
+
   ngOnInit() {
   }
 
-  mySubmit(value: any){
-      console.log(this.personService.getPersons().pop());
+  mySubmit(value: any) {
+    console.log(this.personService.getPersons().pop());
 
-      let person = new Person(this.imie.value, this.yob.value);
-      this.personService.addPerson(person);
-      console.log(this.personService.getPersons().pop());
+    let person = new Person(this.imie.value, this.yob.value);
+    this.personService.addPerson(person);
+    console.log(this.personService.getPersons().pop());
 
 
   }
 
-myImieValidator(control :FormControl){
+  myImieValidator(control: FormControl) {
 
-  if(control.value.match(/^Fra/i)){
-    return {
-      'franekValue' : true
+    if (control.value.match(/^Fra/i)) {
+      return {
+        'franekValue': true
+      }
     }
   }
-}
 }

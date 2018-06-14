@@ -1,9 +1,9 @@
-<div *ngIf="instrument">
+<div  *ngIf="instrument">
 
   <h2>{{ instrument.name | uppercase }} Details</h2>
   <div><span>id: </span>{{instrument.id}}</div>
   <div>
-    <label>name:
+    <label >name:
       <input [(ngModel)]="instrument.name" placeholder="name">
     </label>
   </div>

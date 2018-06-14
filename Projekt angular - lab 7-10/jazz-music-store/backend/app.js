@@ -1,8 +1,12 @@
-const express = require('express')
+const express = require('express') , bodyParser = require('body-parser');
+
 var cors = require('cors')
 
+
 const app = express()
-app.use(cors())
+app.use(cors());
+app.use(bodyParser.json());
+
 
 app.get('/', (req, res) => res.send({name : "hello worlds"}))
 
@@ -72,12 +76,41 @@ res.send(INSTRUMENTS.filter( instrument => instrument.name.includes( instrument_
 
 app.get('/api/instruments/',(req, res) => res.send(INSTRUMENTS));
 
-
-
 app.get('/api/instruments/:id',(req, res) => {
     let instrument_id = req.param("id");
 res.send(INSTRUMENTS.find( instrument => instrument.id == instrument_id))});
 
 
+app.put('/api/instruments', (req, res) => {
+  console.log(req.body.id);
+  var instrument_id = req.body.id;
+  var instrumentToUpdate = INSTRUMENTS.filter(instrument => instrument.id == instrument_id);
 
+
+  console.log(instrumentToUpdate);
+  if(instrumentToUpdate.size > 0 ){
+    INSTRUMENTS.map(instrument => {
+      if(instrument.id == instrument_id){
+        console.log("Updating existing instrument--------------------");
+        console.log(INSTRUMENTS);
+        console.log("------------------------------------------------")
+     //   res.send(202);
+      instrument.amount = req.body.amount;
+      instrument.name = req.body.name;
+      instrument.yearOfProduction = req.body.yearOfProduction;
+      instrument.manufacturer = req.body.manufacturer;
+
+    }
+    return instrument;
+  })}
+  else{
+    console.log("Adding new instrument");
+
+    INSTRUMENTS.push(req.body);
+    console.log("Added new instrument");
+   // res.send(202);
+  }
+  res.send({status:200});
+ // console.log(INSTRUMENTS)
+})
 

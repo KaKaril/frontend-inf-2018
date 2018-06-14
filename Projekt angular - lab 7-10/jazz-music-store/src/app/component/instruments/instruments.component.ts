@@ -18,6 +18,6 @@ export class InstrumentsComponent implements OnInit {
   }
 
   getInstruments (){
-    this.instrumentService.getInstruments().subscribe(instruments => this.instruments = instruments)
+    this.instrumentService.getInstruments().subscribe(instruments => this.instruments = instruments);
   }
 }

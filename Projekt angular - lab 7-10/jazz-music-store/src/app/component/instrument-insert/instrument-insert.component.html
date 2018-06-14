@@ -1,0 +1,39 @@
+<form class="well well-lg" [formGroup]="newInstrumentForm" (ngSubmit)="submitInstrument(newInstrumentForm.value)">
+  <div class="form-group">
+    <label class="center-block">Instrument name
+      <input class="form-control" type="text" [formControl]="name">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Amount
+      <input class="form-control" type="text" [formControl]="amount">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Year of production
+      <input class="form-control" type="text" [formControl]="yearOfProduction">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Year of company estate
+      <input class="form-control" type="text" [formControl]="yearOfEstate">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Company
+      <select type="text" [formControl]="companyName">
+        <option *ngFor="let name of companyNames" [ngValue]="">{{ name }}</option>
+      </select>    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Constructor
+      <input class="form-control" type="text" [formControl]="worker">
+    </label>
+  </div>
+
+
+    <button type="submit">Add instrument</button>
+</form>
+<div *ngIf="name.hasError('required')">Imie wymagane</div>
+<div *ngIf="amount.hasError('required')">Ilosc wymagana</div>
+<div *ngIf="yearOfProduction.hasError('required')">Rok produkcji wymagany</div>
